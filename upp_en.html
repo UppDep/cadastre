@@ -1,0 +1,4776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPP Apps</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Century Gothic, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        select, button {
+           font-family: Century Gothic, sans-serif;
+            margin: 20px;
+            padding: 10px;
+            font-size: 14px;
+        }
+        #results, #result {
+            margin-top: 20px;
+            text-align: left;
+            display: inline-block;
+        }
+        .content-section {
+            display: none;
+        }
+        /* Styles specific to each section */
+        #kanonismoiContent, #dilosiContent, #kaekContent {
+            margin: 20px;
+        }
+        #passwordPrompt {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Password Prompt -->
+    <div id="passwordPrompt">
+        <h1>Enter Password to Access</h1>
+        <input type="password" id="passwordInput" placeholder="Enter Password">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="errorMessage" style="color: red; display: none;">Incorrect Password</p>
+    </div>
+
+
+
+    <h1>UPP Apps</h1>
+
+    <!-- Main Content -->
+    <div id="mainContent" style="display: none;">
+<body>
+<img src="https://theellinikon.com.gr/wp-content/themes/the-ellinikon_1-7/images/logo.svg';">
+</body><p>
+        <button onclick="showSection('kaekContent')">Cadastre KAEK</button>
+        <button onclick="showSection('kanonismoiContent')">Land Regulations</button>
+        <button onclick="showSection('dilosiContent')">Δήλωση του Ν. 4030/2011</button>
+
+
+
+
+    <!-- Section for kanonismoi.html -->
+    <div id="kanonismoiContent" class="content-section">
+        <h1>Land Regulations</h1>
+        <p>Choose the Project</p>
+        <select id="plotSelect1"></select>
+        <div id="results1"></div>
+        <script>
+            // JavaScript for kanonismoi.html functionality
+            const data1 = [
+                // Data from the original kanonismoi.html file
+
+  {
+    "Project": "  ",
+  },
+  
+
+  {
+    "Project": "VMC-MUT",
+    "Plot": "A-U4.17",
+    "Title": "6994/22-03-2024",
+    "Registered": "Yes",
+    "Guidelines": "Restriction",
+    "Land": "No",
+    "Other": "24 m distance between MUT building and common boundary with VMC<p>3100 sq. m. green space based on the central square design creating free access<p>No vertical establisment allowed",
+    "Design": "Yes",
+    "Site": "No",
+    "Detailed": "Yes",
+    "Valid": "75 years",
+    "Extension": "-"
+  },
+  {
+    "Project": "The Cove Villas",
+    "Plot": "CF-U1.1, CF-U1.2, CF-U1.3, CF-U1.4, CF-U1.5Α, CF-U1.6Α, CF-U1.7Α",
+    "Title": "19416/18-06-2024",
+    "Registered": "Yes",
+    "Guidelines": "Proposal/ Restriction on establisments",
+    "Land": "No",
+    "Other": "10, 8, 6 and 4 m Setbacks<p>Height Restrictions<p>No horizontal/vertical establisment allowed",
+    "Design": "Yes",
+    "Site": "No",
+    "Detailed": "No",
+    "Valid": "10 years",
+    "Extension": "-"
+  },
+  {
+    "Project": "Temes - BELT",
+    "Plot": "CF-A2.1",
+    "Title": "6330/23-02-2023",
+    "Registered": "Yes",
+    "Guidelines": "Restriction",
+    "Land": "No",
+    "Other": "Height Restrictions (specific informations pending from PT)",
+    "Design": "Pending",
+    "Site": "Pending",
+    "Detailed": "Pending",
+    "Valid": "Yes",
+    "Extension": "-"
+  },
+  {
+    "Project": "ParkRise",
+    "Plot": "A-U1.5",
+    "Title": "19377/04-06-2024",
+    "Registered": "No",
+    "Guidelines": "Restriction",
+    "Land": "Only Residential Use",
+    "Other": "Area 330,893 sq. m. easement agreement for Poseidonos underpass infra needs",
+    "Design": "Yes",
+    "Site": "No",
+    "Detailed": "Yes",
+    "Valid": "Yes",
+    "Extension": "-"
+  },
+  {
+    "Project": "Built to Rent Xeris",
+    "Plot": "A-U1.4",
+    "Title": "7324/16-10-2024",
+    "Registered": "Yes",
+    "Guidelines": "Restriction",
+    "Land": "Only Residential Use<p>200 sq. m. on ground level for food uses but allowed only in properties with no face on the main pedestrian way<p>any other use not allowed",
+    "Other": "No vertical establisment allowed",
+    "Design": "Yes",
+    "Site": "Yes",
+    "Detailed": "Yes",
+    "Valid": "15 years",
+    "Extension": "15 years"
+  },
+  {
+    "Project": "Sunrise Project - Brook Lane",
+    "Plot": "A-U3.2",
+    "Title": "7207/24-07-2024",
+    "Registered": "Yes",
+    "Guidelines": "Restriction",
+    "Land": ">90% Residential<p>rest 10% for supporting purposes<p>any other use not allowed",
+    "Other": "Area D designated as green and open space (plot B7)<p>In area A building height cannot exceed 14 m (plot A-U3.1)<p>In area B building height cannot exceed 14 m (plot A-U3.3)",
+    "Design": "Yes",
+    "Site": "Yes",
+    "Detailed": "No",
+    "Valid": "15 years",
+    "Extension": "15 years"
+  },
+  {
+    "Project": "Sunrise Project - (Rest Blocks)",
+    "Plot": "A-U3.9, A-U3.10, A-U3.11, A-U3.12",
+    "Title": "7192/16-07-2024",
+    "Registered": "Yes",
+    "Guidelines": "Restriction",
+    "Land": ">90% Residential<p>rest 10% for supporting purposes<p>any other use not allowed",
+    "Other": "Νο",
+    "Design": "Yes",
+    "Site": "Yes",
+    "Detailed": "No",
+    "Valid": "15 years",
+    "Extension": "15 years"
+  },
+  {
+    "Project": "Mainstream A-U1.6",
+    "Plot": "A-U1.6",
+    "Title": "Pending",
+    "Registered": "No",
+    "Guidelines": "Restriction",
+    "Land": "Pending",
+    "Other": "Pending",
+    "Design": "Yes",
+    "Site": "Pending",
+    "Detailed": "Yes",
+    "Valid": "Pending",
+    "Extension": "Pending"
+  },
+  {
+    "Project": "Prokopiou",
+    "Plot": "A-D1.1",
+    "Title": "Pending",
+    "Registered": "No",
+    "Guidelines": "Restriction",
+    "Land": "Pending",
+    "Other": "Pending",
+    "Design": "Yes",
+    "Site": "Pending",
+    "Detailed": "Yes",
+    "Valid": "Pending",
+    "Extension": "Pending"
+  }
+
+
+            ];
+            const plotSelect1 = document.getElementById('plotSelect1');
+            const resultsDiv1 = document.getElementById('results1');
+
+            const uniquePlots1 = [...new Set(data1.map(item => item.Project))];
+            uniquePlots1.forEach(Project => {
+                const option = document.createElement('option');
+                option.value = Project;
+                option.textContent = Project;
+                plotSelect1.appendChild(option);
+            });
+
+            plotSelect1.addEventListener('change', function() {
+                const selectedPlot = plotSelect1.value;
+                const filteredData1 = data1.filter(item => item.Project === selectedPlot);
+                let resultHTML1 = `<h2>Results for ${selectedPlot}</h2>`;
+                if (filteredData1.length > 0) {
+                    const firstEntry = filteredData1[0];
+                    resultHTML1 += `<p>Plot: ${firstEntry.Plot}</p>`;
+        resultHTML1 += `<p>TITLE: ${firstEntry.Title}<p>`;
+        resultHTML1 += `<p>REGISTERED: ${firstEntry.Registered}<p>`,
+        resultHTML1 += `<p>TYPE OF GUIDELINE: ${firstEntry.Guidelines}<p><br>`,
+        resultHTML1 += `<p><h3>LAND USE TERMS: </h3>${firstEntry.Land}<p><br>`,
+        resultHTML1 += `<p><h3>OTHER LAND REGULATIONS: </h3><p>${firstEntry.Other}<p><br>`,
+        resultHTML1 += `<p>DESIGN GUIDELINES: ${firstEntry.Design}<p>`,
+        resultHTML1 += `<p>SITE AGREEMENT: ${firstEntry.Site}<p>`,
+        resultHTML1 += `<p>DETAILED MASTERPLAN: ${firstEntry.Detailed}<p>`,
+        resultHTML1 += `<p>VALID: ${firstEntry.Valid}<p>`,
+        resultHTML1 += `<p>EXTENSION: ${firstEntry.Extension}<p>`
+                    // Additional fields here...
+                } else {
+                    resultHTML1 += `<p>No data available for this plot.</p>`;
+
+
+        resultsDiv.innerHTML = resultHTML1;
+                }
+                resultsDiv1.innerHTML = resultHTML1;
+            });
+        </script>
+    </div>
+
+    <!-- Section for 4030dilosi.html -->
+    <div id="dilosiContent" class="content-section">
+        <h1>Δήλωση του Ν. 4030/2011</h1>
+    <form id="declarationForm">
+        <!-- Dropdown menus for selecting values -->
+
+        <div class="form-group">
+            <label for="name">Ονοματεπώνυμο:</label>
+            <select id="name">
+                <option value=" "> </option>
+                <option value="Οδυσσέα Αθανασίου του Ελευθερίου">Οδυσσέας Αθανασίου του Ελευθερίου</option>
+                <option value="Παναγιώτη Ασπρούλια του Θεοδώρου">Παναγιώτης Ασπρούλιας του Θεοδώρου  </option>
+                <option value="Θεόδωρο Γαβριηλίδη του Αλέξανδρου">Θεόδωρος Γαβριηλίδης του Αλέξανδρου </option>
+                <option value="Χαράλαμπο Γκορίτσα του Χρήστου">Χαράλαμπος Γκορίτσας του Χρήστου </option>
+                <option value="Απόστολο Ζαφόλια του Δημητρίου">Απόστολος Ζαφόλιας του Δημητρίου</option>
+                <option value="Διονυσία Ηλιοπούλου του Δημητρίου">Διονυσία Ηλιοπούλου του Δημητρίου </option>
+                <option value="Δημήτριο Καραστογιάννη του Πέτρου">Δημήτριος Καραστογιάννης του Πέτρου </option>
+                <option value="Σταύρο Κατσικάδη του Παύλου">Σταύρος Κατσικάδης του Παύλου  </option>
+                <option value="Ανδρέα Καψάλη του Αθανασίου">Ανδρέας Καψάλης του Αθανασίου  </option>
+                <option value="Δημήτριο Κίτσιο του Σπύρου">Δημήτριος Κίτσιος του Σπύρου  </option>
+                <option value="Λυδία Μαγκλάρα του Κωνσταντίνου">Λυδία Μαγκλάρα του Κωνσταντίνου </option>
+                <option value="Μελίνα-Σωτηρία Παῒζη του Γεωργίου">Μελίνα-Σωτηρία Παῒζη του Γεωργίου</option>
+                <option value="Marlon Saab του Αντωνίου">Marlon Saab του Αντωνίου </option>
+                <option value="Αγγελική Τούζιου του Δημητρίου">Αγγελική Τούζιου του Δημητρίου </option>
+                <option value="Αναστασία Αγιασμάτη του Στυλιανού">Αναστασία Αγιασμάτη του Στυλιανού</option>
+                <option value="Αθανασία Αραβανή του Παναγιώτη">Αθανασία Αραβανή του Παναγιώτη</option>
+                <option value="Μαρία – Χριστίνα Γρίβα του Γεωργίου">Μαρία – Χριστίνα Γρίβα του Γεωργίου  </option>
+                <option value="Θεόδωρο Ιακωβίδη του Ανδρέα-Νικηφόρου">Θεόδωρος Ιακωβίδης του Ανδρέα-Νικηφόρου </option>
+                <option value="Γιώργο Κώττη του Μηνά">Γιώργος Κώττης του Μηνά  </option>
+                <option value="Μαρία Μαυρωνά του Ιωάννη">Μαρία Μαυρωνά του Ιωάννη </option>
+                <option value="Γεώργιο Μπαδογιαννάκη του Δήμου">Γεώργιος Μπαδογιαννάκης του Δήμου </option>
+                <option value="Αλέξανδρο Μουλά του Αναστασίου">Αλέξανδρος Μουλάς του Αναστασίου</option>
+                <option value="Ιωάννη Νικολόπουλο του  Γεωργίου">Ιωάννης Νικολόπουλος του  Γεωργίου </option>
+                <option value="Ηλία Ντεγιάννη του Σωτηρίου">Ηλίας Ντεγιάννης του Σωτηρίου </option>
+                <option value="Ευάγγελο Πέρπερα του Γεωργίου">Ευάγγελος Πέρπερας του Γεωργίου </option>
+                <option value="Αναστασία Τουφεγγοπούλου του Σταύρου">Αναστασία Τουφεγγοπούλου του Σταύρου </option>
+                <option value="Αθανάσιο Φατσέα του Αντώνιου">Αθανάσιος Φατσέας του Αντώνιου </option>
+                <option value="Ευτυχία Φωτοπούλου του Σπυρίδωνος">Ευτυχία Φωτοπούλου του Σπυρίδωνος</option>
+                <option value="Αναστάσιο Χατζηδήμα του Κωνσταντίνου">Αναστάσιος Χατζηδήμας του  Κωνσταντίνου </option>
+                <!-- Add more values as needed -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="ownership">Τύπος Ιδιοκτησίας:</label>
+            <select id="ownership">
+                <option value=" "> </option>
+                <option value="πλήρης κύριος">πλήρης κύριος</option>
+                <option value="επιφανειούχος">επιφανειούχος</option>
+                <option value="ως πληρεξούσιος του/της..........................">ως πληρεξούσιος του/της..........................</option>
+                <!-- Add more values as needed -->
+            </select>
+        </div>
+
+        <!-- Text input fields for user entry -->
+        <div class="form-group">
+            <label for="kaek">KAEK:</label>
+            <input type="text" id="kaek" placeholder="Εισαγωγή KAEK">
+        </div>
+
+        <div class="form-group">
+            <label for="kaek_ep">KAEK ΕΠΙΦΑΝΕΙΑΣ:</label>
+            <input type="text" id="kaek_ep" placeholder="Εισαγωγή KAEK ΕΠΙΦΑΝΕΙΑΣ εφόσον υπάρχει">
+        </div>
+
+        <div class="form-group">
+            <label for="plot">Ιδιοκτησία:</label>
+            <input type="text" id="plot" placeholder="Αν δεν υπάρχει αρ. ιδιοκτησίας να παραμείνει κενό">
+        </div>
+
+        <div class="form-group">
+            <label for="district">Περιοχή:</label>
+            <select id="district">
+                <option value=" "> </option>
+                <option value="Α-Π1">Α-Π1</option>
+                <option value="Α-Π2">Α-Π2</option>
+                <option value="Α-Π3">Α-Π3</option>
+                <option value="Α-Π4">Α-Π4</option>
+                <option value="Α-Π5">Α-Π5</option>
+                <option value="Α-Π6">Α-Π6</option>
+                <option value="ΠΜ-Π1">ΠΜ-Π1</option>
+                <option value="Α-Α1">Α-Α1</option>
+                <option value="ΠΜ-Α1">ΠΜ-Α1</option>
+                <option value="ΠΜ-Α2">ΠΜ-Α2</option>
+                <option value="ΜΗΤΡΟΠΟΛΙΤΙΚΟ ΠΑΡΚΟ">ΜΗΤΡΟΠΟΛΙΤΙΚΟ ΠΑΡΚΟ</option>
+                <option value=""></option>
+                <!-- Add more values as needed -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="sector">Τομέας:</label>
+            <select id="sector">
+                <option value=""></option>
+                <option value="I">I</option>
+                <option value="II">II</option>
+                <option value="III">III</option>
+                <option value="IV">IV</option>
+                <option value="V">V</option>
+                <option value="VI">VI</option>
+                <option value="VII">VII</option>
+                <option value="VIII">VIII</option>
+                <option value="IX">IX</option>
+                <option value="X">X</option>
+                <option value="XI">XI</option>
+                <option value="XII">XII</option>
+
+                <!-- Add more values as needed -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="title">Τίτλος Ιδιοκτησίας:</label>
+            <input type="text" id="title" placeholder="Τίτλος Ιδιοκτησίας">
+        </div>
+
+        <div class="form-group">
+            <label for="coords">Κορυφές Ιδιοκτησίας:</label>
+            <input type="text" id="coords" placeholder="Enter Κορυφές Ιδιοκτησίας">
+        </div>
+
+    <!-- Hidden input fields for predefined values -->
+    <input type="hidden" id="genre">
+    <input type="hidden" id="claim">
+    <input type="hidden" id="hh">
+    <input type="hidden" id="right">
+    <input type="hidden" id="dname">
+
+        <!-- Button to generate the adjusted text -->
+        <button type="button" onclick="generateText()">Generate Text</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+
+// Mapping of name to genre, claim, hh, and right
+const nameToDetailsMap = {
+    "Οδυσσέα Αθανασίου του Ελευθερίου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Παναγιώτη Ασπρούλια του Θεοδώρου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Θεόδωρο Γαβριηλίδη του Αλέξανδρου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Χαράλαμπο Γκορίτσα του Χρήστου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Απόστολο Ζαφόλια του Δημητρίου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Διονυσία Ηλιοπούλου του Δημητρίου": { genre: "Η", claim: "την δηλούσα", hh: "κα", right: "H νομίμως εξουσιοδοτημένη" },
+    "Δημήτριο Καραστογιάννη του Πέτρου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Σταύρο Κατσικάδη του Παύλου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Ανδρέα Καψάλη του Αθανασίου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Δημήτριο Κίτσιο του Σπύρου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Λυδία Μαγκλάρα του Κωνσταντίνου": { genre: "Η", claim: "την δηλούσα", hh: "κα", right: "H νομίμως εξουσιοδοτημένη" },
+    "Μελίνα-Σωτηρία Παῒζη του Γεωργίου": { genre: "Η", claim: "την δηλούσα", hh: "κα", right: "H νομίμως εξουσιοδοτημένη" },
+    "Marlon Saab του Αντωνίου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Αγγελική Τούζιου του Δημητρίου": { genre: "Η", claim: "την δηλούσα", hh: "κα", right: "H νομίμως εξουσιοδοτημένη" },
+    "Αναστασία Αγιασμάτη του Στυλιανού": { genre: "Η", claim: "την δηλούσα", hh: "κα", right: "H νομίμως εξουσιοδοτημένη" },
+    "Αθανασία Αραβανή του Παναγιώτη": { genre: "Η", claim: "την δηλούσα", hh: "κα", right: "H νομίμως εξουσιοδοτημένη" },
+    "Μαρία – Χριστίνα Γρίβα του Γεωργίου": { genre: "Η", claim: "την δηλούσα", hh: "κα", right: "H νομίμως εξουσιοδοτημένη" },
+    "Θεόδωρο Ιακωβίδη του Ανδρέα-Νικηφόρου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Γιώργο Κώττη του Μηνά": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Μαρία Μαυρωνά του Ιωάννη": { genre: "Η", claim: "την δηλούσα", hh: "κα", right: "H νομίμως εξουσιοδοτημένη" },
+    "Γεώργιο Μπαδογιαννάκη του Δήμου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Αλέξανδρο Μουλά του Αναστασίου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Ιωάννη Νικολόπουλο του Γεωργίου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Ηλία Ντεγιάννη του Σωτηρίου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Ευάγγελο Πέρπερα του Γεωργίου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Αναστασία Τουφεγγοπούλου του Σταύρου": { genre: "Η", claim: "την δηλούσα", hh: "κα", right: "H νομίμως εξουσιοδοτημένη" },
+    "Αθανάσιο Φατσέα του Αντώνιου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" },
+    "Ευτυχία Φωτοπούλου του Σπυρίδωνος": { genre: "Η", claim: "την δηλούσα", hh: "κα", right: "H νομίμως εξουσιοδοτημένη" },
+    "Αναστάσιο Χατζηδήμα του Κωνσταντίνου": { genre: "Ο", claim: "τον δηλούντα", hh: "κ.", right: "O νομίμως εξουσιοδοτούμενος" }
+};
+
+// Function to update fields based on selected name
+document.getElementById("name").addEventListener("change", function () {
+    const selectedName = this.value;
+    const details = nameToDetailsMap[selectedName];
+
+    // Update the fields only if the name has an entry in the map
+    if (details) {
+        document.getElementById("genre").value = details.genre;
+        document.getElementById("claim").value = details.claim;
+        document.getElementById("hh").value = details.hh;
+        document.getElementById("right").value = details.right;
+    } else {
+        // Clear fields if name has no corresponding details
+        document.getElementById("genre").value = "";
+        document.getElementById("claim").value = "";
+        document.getElementById("hh").value = "";
+        document.getElementById("right").value = "";
+    }
+});
+
+// Mapping of district to dname
+const districtToDnameMap = {
+    "Α-Π1": "Γειτονιά πρώην Ολυμπιακής Αεροπορίας",
+    "Α-Π2": "Δυτική Γειτονιά του Πάρκου",
+    "Α-Π3": "Ανατολική Γειτονιά του Πάρκου",
+    "Α-Π4": "Γειτονιά Επιχειρηματικού Κέντρου Λεωφόρου Βουλιαγμένης",
+    "Α-Π5": "Γειτονιά του Λόφου",
+    "Α-Π6": "Γειτονιά των Τραχώνων",
+    "ΠΜ-Π1": "Γειτονιά Παραλίας Αγίου Κοσμά",
+    "ΠΜ-Α1": "Γειτονιά Μαρίνας Αγίου Κοσμά",
+    "ΠΜ-Α2": "Γειτονιά Ενυδρείου Αγίου Κοσμά",
+    "Α-Α1": "Γειτονιά Τουρισμού-Αναψυχής και Επιχειρηματικού Πάρκου",
+    "ΜΗΤΡΟΠΟΛΙΤΙΚΟ ΠΑΡΚΟ": "Μητροπολιτικό Πάρκο Πρασίνου και Αναψυχής"
+};
+
+// Function to update dname based on selected district
+document.getElementById("district").addEventListener("change", function () {
+    const selectedDistrict = this.value;
+    const dnameField = document.getElementById("dname");
+    
+    // Set the dname based on the selected district
+    dnameField.value = districtToDnameMap[selectedDistrict] || "";
+});
+        function generateText() {
+            // Get values from dropdowns and text inputs
+            const genre = document.getElementById("genre").value;
+            const name = document.getElementById("name").value;
+            const ownership = document.getElementById("ownership").value;
+            const dname = document.getElementById("dname").value;
+            const sector = document.getElementById("sector").value;
+            const claim = document.getElementById("claim").value;
+            const hh = document.getElementById("hh").value;
+            const right = document.getElementById("right").value;
+            const kaek = document.getElementById("kaek").value;
+            const kaek_ep = document.getElementById("kaek_ep").value;
+            const plot = document.getElementById("plot").value;
+            const district = document.getElementById("district").value;
+            const title = document.getElementById("title").value;
+            const coords = document.getElementById("coords").value;
+
+    // Conditional inclusion of kaek_ep in the text
+    const kaekEpText = kaek_ep ? `(ΚΑΕΚ επιφανείας ${kaek_ep})` : "";
+    const sectorText = sector ? `του Τομέα ${sector},` : "";
+    const plotT = plot ? ` που αποτελεί την ιδιοκτησία ${plot},` : "";
+
+            // Construct the adjusted text
+            const adjustedText = `Η μονοπρόσωπη ανώνυμη εταιρεία με την επωνυμία «ΕΛΛΗΝΙΚΟ - ΕΤΑΙΡΕΙΑ ΑΝΑΠΤΥΞΗΣ ΑΞΙΟΠΟΙΗΣΗΣ ΚΑΙ ΔΙΑΧΕΙΡΙΣΗΣ ΑΚΙΝΗΤΩΝ ΜΗΤΡΟΠΟΛΙΤΙΚΟΥ ΠΟΛΟΥ ΕΛΛΗΝΙΚΟΥ - ΑΓΙΟΥ ΚΟΣΜΑ ΜΟΝΟΠΡΟΣΩΠΗ ΑΝΩΝΥΜΗ ΕΤΑΙΡΕΙΑ» και το διακριτικό τίτλο «ΕΛΛΗΝΙΚΟ Μ.Α.Ε.» (ΑΦΜ 997674736, ΚΕ.ΦΟ.Δ.Ε. Αττικής ΑΡ.ΓΕΜΗ 115936901000), με έδρα το Μαρούσι Αττικής Λεωφόρος Κηφισίας 37A, Τ.Κ. 15123, όπως αυτή εκπροσωπείται νόμιμα για την υπογραφή της παρούσας από ${claim} ${hh} ${name}, δυνάμει του από 23.08.2024 Πρακτικού Διοικητικού Συμβουλίου της ως άνω εταιρείας (όπως αυτό καταχωρήθηκε την 29.08.2024 στο Γ.Ε.ΜΗ. με αρ. καταχ. 4399926, ${ownership} του γεωτεμαχίου με ΚΑΕΚ ${kaek} ${kaekEpText},${plotT} στην περιοχή ${district} - ${dname}, ${sectorText} στον Μητροπολιτικό Πόλο Ελληνικού Αγίου Κοσμά στην Περιφερειακή Ενότητα Νοτίου Τομέα Αθηνών - Περιφέρεια Αττικής, βάσει του ${title} τίτλου ιδιοκτησίας, δηλώνει ότι:
+
+Τα όρια του εμφαινόμενου οικοπέδου ${plot}, με κορυφές ${coords} όπως περιγράφονται στον συνημμένο πίνακα, υπεδείχθησαν από εμένα, ευθύνομαι για την ακρίβειά τους κι έχω δικαίωμα έκδοσης άδειας ανέγερσης.
+
+${right} εκπρόσωπος του ιδιοκτήτη`;
+
+            // Display the generated text in the result div
+            document.getElementById("result").innerText = adjustedText;
+        }
+    </script>
+
+<h5>*Πάντοτε να πραγματοποιείται έλεγχος για το ισχύον πρακτικό εκπροσώπησης.<p>
+*Εφόσον υπογράφεται η δήλωση για τρίτο μέρος να συμπληρωθούν ο τίτλος κτήσης αυτού και το αντίστοιχο πληρεξούσιο.</h5>
+
+    </div>
+
+    <!-- Section for cadastre_kaek.html -->
+    <div id="kaekContent" class="content-section">
+        <h1>Cadastre KAEK</h1>
+        <p>Choose the Plot of Interest</p>
+        <select id="plotSelect2"></select>
+        <div id="results2"></div>
+        <script>
+            // JavaScript for cadastre_kaek.html functionality
+            const data2 = [
+                // Data from the original cadastre_kaek.html file
+
+  {
+    "plot": "  ",
+  },
+  
+  {
+    "plot": "TCV 1.1.1",
+    "BLOCK": "CF-U1_1",
+    "KAEK": "050134703003",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.018,103",
+    "LAND_AGREEMENT": "7049 - 30/1/2023",
+    "NOTARY": "ΕΥΑΓΓΕΛΙΑ ΓΟΥΛΑΝΔΡΗ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 56,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.1.1",
+    "BLOCK": "CF-U1_1",
+    "KAEK": "050134703003",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.018,103",
+    "LAND_AGREEMENT": "7049 - 30/1/2023",
+    "NOTARY": "ΕΥΑΓΓΕΛΙΑ ΓΟΥΛΑΝΔΡΗ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 56,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.1.2",
+    "BLOCK": "CF-U1_1",
+    "KAEK": "050134703002",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.018,100",
+    "LAND_AGREEMENT": "17590 - 29/7/2022",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 55,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.1.3",
+    "BLOCK": "CF-U1_1",
+    "KAEK": "050134703004",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.018,100",
+    "LAND_AGREEMENT": "17716 - 3/10/2022",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 36,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.1.4",
+    "BLOCK": "CF-U1_1",
+    "KAEK": "050134703005",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.018,108",
+    "LAND_AGREEMENT": "18329 - 26/5/2023",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 27,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.1.5",
+    "BLOCK": "CF-U1_1",
+    "KAEK": "050134703001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.018,108",
+    "LAND_AGREEMENT": "18588 - 7/9/2023",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 26,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.2.1",
+    "BLOCK": "CF-U1_2",
+    "KAEK": "050134706002",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.139,930",
+    "LAND_AGREEMENT": "17591 - 29/7/2022",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 33,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.2.2",
+    "BLOCK": "CF-U1_2",
+    "KAEK": "050134706003",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.094,011",
+    "LAND_AGREEMENT": "2763 - 27/12/2022",
+    "NOTARY": "ΡΟΥΜΠΙΝΗ ΤΙΓΚΑ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 33,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.2.3",
+    "BLOCK": "CF-U1_2",
+    "KAEK": "050134706001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.094,013",
+    "LAND_AGREEMENT": "2925 - 19/10/2023",
+    "NOTARY": "ΡΟΥΜΠΙΝΗ ΤΙΓΚΑ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 30,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.2.4",
+    "BLOCK": "CF-U1_2",
+    "KAEK": "050134706004",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.094,004",
+    "LAND_AGREEMENT": "2843 - 9/5/2023",
+    "NOTARY": "ΡΟΥΜΠΙΝΗ ΤΙΓΚΑ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 30,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.3.1",
+    "BLOCK": "CF-U1_3",
+    "KAEK": "050134708001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "3.743,053",
+    "LAND_AGREEMENT": "18085 - 10/2/2023",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 33,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.3.1",
+    "BLOCK": "CF-U1_3",
+    "KAEK": "050134708001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "3.743,053",
+    "LAND_AGREEMENT": "18085 - 10/2/2023",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 33,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.3.2",
+    "BLOCK": "CF-U1_3",
+    "KAEK": "050134708003",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.399,690",
+    "LAND_AGREEMENT": "17899 - 5/12/2022",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 35,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.3.3",
+    "BLOCK": "CF-U1_3",
+    "KAEK": "050134708002",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "3.350,518",
+    "LAND_AGREEMENT": "18123 - 2/3/2023",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 35,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.4.1",
+    "BLOCK": "CF-U1_4",
+    "KAEK": "050134712003",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.530,421",
+    "LAND_AGREEMENT": "6951 - 2/12/2022",
+    "NOTARY": "ΕΥΑΓΓΕΛΙΑ ΓΟΥΛΑΝΔΡΗ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 33,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.4.2",
+    "BLOCK": "CF-U1_4",
+    "KAEK": "050134712002",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.528,219",
+    "LAND_AGREEMENT": "17711 - 30/9/2022",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 36,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.4.2",
+    "BLOCK": "CF-U1_4",
+    "KAEK": "050134712002",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.528,219",
+    "LAND_AGREEMENT": "17711 - 30/9/2022",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 36,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.4.3",
+    "BLOCK": "CF-U1_4",
+    "KAEK": "050134712004",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.528,162",
+    "LAND_AGREEMENT": "6961 - 7/12/2022",
+    "NOTARY": "ΕΥΑΓΓΕΛΙΑ ΓΟΥΛΑΝΔΡΗ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 28,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 1.4.4",
+    "BLOCK": "CF-U1_4",
+    "KAEK": "050134712001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.528,164",
+    "LAND_AGREEMENT": "6991 - 21/12/2022",
+    "NOTARY": "ΕΥΑΓΓΕΛΙΑ ΓΟΥΛΑΝΔΡΗ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 29,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 2.5.1",
+    "BLOCK": "CF-U1_5A",
+    "KAEK": "050134714004",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.273,966",
+    "LAND_AGREEMENT": "17949 - 16/12/2022",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 102,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 2.5.2",
+    "BLOCK": "CF-U1_5A",
+    "KAEK": "050134714001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.512,357",
+    "LAND_AGREEMENT": "18992 - 1/2/2024",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 105,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 2.5.3",
+    "BLOCK": "CF-U1_5A",
+    "KAEK": "050134714005",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.400,000",
+    "LAND_AGREEMENT": "18292 - 11/5/2023",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 105,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 2.5.3",
+    "BLOCK": "CF-U1_5A",
+    "KAEK": "050134714005",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.400,000",
+    "LAND_AGREEMENT": "18292 - 11/5/2023",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 105,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 2.6.1",
+    "BLOCK": "CF-U1_6A",
+    "KAEK": "050134709003",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.440,997",
+    "LAND_AGREEMENT": "2731 - 11/11/2022",
+    "NOTARY": "ΡΟΥΜΠΙΝΗ ΤΙΓΚΑ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 108,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 2.6.2",
+    "BLOCK": "CF-U1_6A",
+    "KAEK": "050134709004",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.855,992",
+    "LAND_AGREEMENT": "7560 - 10/5/2024",
+    "NOTARY": "ΕΥΑΓΓΕΛΙΑ ΓΟΥΛΑΝΔΡΗ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 109,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 2.6.2",
+    "BLOCK": "CF-U1_6A",
+    "KAEK": "050134709004",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.855,992",
+    "LAND_AGREEMENT": "7560 - 10/5/2024",
+    "NOTARY": "ΕΥΑΓΓΕΛΙΑ ΓΟΥΛΑΝΔΡΗ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 109,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 2.6.3",
+    "BLOCK": "CF-U1_6A",
+    "KAEK": "050134709001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "3.255,721",
+    "LAND_AGREEMENT": "18523 - 26/7/2023",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 112,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 2.7.1",
+    "BLOCK": "CF-U1_7A",
+    "KAEK": "050500116006",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.007,423",
+    "LAND_AGREEMENT": "3000 - 15/3/2024",
+    "NOTARY": "ΡΟΥΜΠΙΝΗ ΤΙΓΚΑ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 108,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 2.7.2",
+    "BLOCK": "CF-U1_7A",
+    "KAEK": "050500116001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.300,000",
+    "LAND_AGREEMENT": "3028 - 13/5/2024",
+    "NOTARY": "ΡΟΥΜΠΙΝΗ ΤΙΓΚΑ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 110,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 2.7.3",
+    "BLOCK": "CF-U1_7A",
+    "KAEK": "050500116005",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.300,000",
+    "LAND_AGREEMENT": "2765 - 28/12/2022",
+    "NOTARY": "ΡΟΥΜΠΙΝΗ ΤΙΓΚΑ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 114,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 2.7.4",
+    "BLOCK": "CF-U1_7A",
+    "KAEK": "050500116004",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.300,032",
+    "LAND_AGREEMENT": "6956 - 6/12/2022",
+    "NOTARY": "ΕΥΑΓΓΕΛΙΑ ΓΟΥΛΑΝΔΡΗ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 114,
+    "comments": "-"
+  },
+  {
+    "plot": "TCV 2.7.5",
+    "BLOCK": "CF-U1_7A",
+    "KAEK": "050500116003",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.422,325",
+    "LAND_AGREEMENT": "17956 - 19/12/2022",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19416 - 18/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 113,
+    "comments": "-"
+  },
+  {
+    "plot": "CF-U1_5Β (CF CONDOS)",
+    "BLOCK": "CF-U1_5Β",
+    "KAEK": "050134714002",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": 21,
+    "AREA": "8.217,130",
+    "LAND_AGREEMENT": "",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 144,
+    "comments": "-"
+  },
+  {
+    "plot": "CF-U1_6Β (CF CONDOS)",
+    "BLOCK": "CF-U1_6Β",
+    "KAEK": "050134709002",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": 25,
+    "AREA": "11.601,200",
+    "LAND_AGREEMENT": "",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 164,
+    "comments": "-"
+  },
+  {
+    "plot": "CF-U1_7Β (CF CONDOS)",
+    "BLOCK": "CF-U1_7Β",
+    "KAEK": "050500116002",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": 90,
+    "AREA": "21.053,840",
+    "LAND_AGREEMENT": "",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 164,
+    "comments": "-"
+  },
+  {
+    "plot": "CF-U1_8   (CF CONDOS)",
+    "BLOCK": "CF-U1_8",
+    "KAEK": "050500521001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": 47,
+    "AREA": "11.542,905",
+    "LAND_AGREEMENT": "",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 194,
+    "comments": "-"
+  },
+  {
+    "plot": "BELT",
+    "BLOCK": "CF-D2.1",
+    "KAEK": "050500113002",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "80.011,330",
+    "LAND_AGREEMENT": "6338 - 6/3/2023",
+    "NOTARY": "ΕΛΕΝΗ ΘΩΜΟΠΟΥΛΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "6330 - 23/2/2023",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 12,
+    "comments": "-"
+  },
+  {
+    "plot": "MALT",
+    "BLOCK": "CF-D1.4",
+    "KAEK": "050500102007",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "132.821,910",
+    "LAND_AGREEMENT": "6148 - 21/11/2022",
+    "NOTARY": "ΕΛΕΝΗ ΘΩΜΟΠΟΥΛΟΥ",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050500102004",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 7,
+    "comments": "-"
+  },
+
+  {
+    "plot": "ORILINA RESIDENTIAL",
+    "BLOCK": "CF-D1.1",
+    "KAEK": "050500102019",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "22.795,210",
+    "LAND_AGREEMENT": "36620 - 19/6/2023",
+    "NOTARY": "ΕΜΜΑΝΟΥΗΛ ΣΑΡΑΓΙΩΤΗΣ",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050500102016",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 17,
+    "comments": "-"
+  },
+  {
+    "plot": "ORILINA YACHT CLUB",
+    "BLOCK": "CF-D1.2",
+    "KAEK": "050500102018",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "24.553,450",
+    "LAND_AGREEMENT": "36620 - 19/6/2023",
+    "NOTARY": "ΕΜΜΑΝΟΥΗΛ ΣΑΡΑΓΙΩΤΗΣ",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050500102015",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 12,
+    "comments": "-"
+  },
+
+  {
+    "plot": "RIVIERA GALLERIA",
+    "BLOCK": "CF-D1.3",
+    "KAEK": "050500102006",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "131.240,010",
+    "LAND_AGREEMENT": "6148 - 21/11/2022",
+    "NOTARY": "ΕΛΕΝΗ ΘΩΜΟΠΟΥΛΟΥ",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050500102003",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 11,
+    "comments": "-"
+  },
+  {
+    "plot": "RIVIERA TOWER",
+    "BLOCK": "CF-U1_9",
+    "KAEK": "050500111001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": 177,
+    "AREA": "32.529,304",
+    "LAND_AGREEMENT": "18925 - 12/1/2024",
+    "NOTARY": "ΜΑΡΙΝΑ ΣΤΑΥΡΙΑΝΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 26,
+    "comments": "-"
+  },
+  {
+    "plot": "MUT",
+    "BLOCK": "A-U4_17",
+    "KAEK": "050501528001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "26.144,311",
+    "LAND_AGREEMENT": "22653 - 28/3/2024",
+    "NOTARY": "ΤΣΑΓΓΑΡΗ ΜΑΡΙΑ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "6994 - 22/3/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "6995 - 22/3/2024",
+    "DISTANCE_FROM_SEA": 1719,
+    "comments": "-"
+  },
+  {
+    "plot": "VMC",
+    "BLOCK": "A-U4_17",
+    "KAEK": "050501528002",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "122.230,782",
+    "LAND_AGREEMENT": "5963 - 28/6/2022",
+    "NOTARY": "ΕΛΕΝΗ ΘΩΜΟΠΟΥΛΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "6994 - 22/3/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1508,
+    "comments": "-"
+  },
+  {
+    "plot": "VMC",
+    "BLOCK": "A-U4_17",
+    "KAEK": "050501528002",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "122.230,782",
+    "LAND_AGREEMENT": "5963 - 28/6/2022",
+    "NOTARY": "ΕΛΕΝΗ ΘΩΜΟΠΟΥΛΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "6994 - 22/3/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1508,
+    "comments": "-"
+  },
+
+  {
+    "plot": "Α-Α1_1 (PROKOPIOU)",
+    "BLOCK": "A-D1_1",
+    "KAEK": "050412602011",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "390.666,710",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 555,
+    "comments": "*the contract has not been registered yet"
+  },
+  {
+    "plot": "Α-Α1_2A (IRC)",
+    "BLOCK": "A-D1_2A",
+    "KAEK": "050412602012",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "126.219,490",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050412602013",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 326,
+    "comments": "*MoU has being signed with Terna - Hardrock (IRC)"
+  },
+  {
+    "plot": "Α-Α1_2B (IRC)",
+    "BLOCK": "A-D1_2B",
+    "KAEK": "050501701001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "117.258,770",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050501701002",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 223,
+    "comments": "*MoU has being signed with Terna - Hardrock (IRC)"
+  },
+  {
+    "plot": "METROPOLITAN PARK",
+    "BLOCK": "PARK",
+    "KAEK": "050501801001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.000.569,020",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050501801002",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 78,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_1",
+    "BLOCK": "A-U1_1",
+    "KAEK": "050501618001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "14.984,011",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 262,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_2",
+    "BLOCK": "A-U1_2",
+    "KAEK": "050501617001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "17.794,120",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 451,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_3",
+    "BLOCK": "A-U1_3",
+    "KAEK": "050501612001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "17.700,785",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 572,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_4",
+    "BLOCK": "A-U1_4",
+    "KAEK": "050501611001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "15.944,167",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "7324 - 16/10/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 574,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_5",
+    "BLOCK": "A-U1_5",
+    "KAEK": "050501607001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": 89,
+    "AREA": "8.773,018",
+    "LAND_AGREEMENT": "",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "19377 - 4/6/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 402,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_6",
+    "BLOCK": "A-U1_6",
+    "KAEK": "050501608001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "15.945,912",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 300,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_7",
+    "BLOCK": "A-U1_7",
+    "KAEK": "050501616001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "7.568,182",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 383,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_8",
+    "BLOCK": "A-U1_8",
+    "KAEK": "050501613001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "7.876,722",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 495,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_9",
+    "BLOCK": "A-U1_9",
+    "KAEK": "050501610001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "13.083,387",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 494,
+    "comments": "*ongoing update of the cadastral records due to JMD amendment"
+  },
+  {
+    "plot": "Α-U1_10",
+    "BLOCK": "A-U1_10",
+    "KAEK": "050501609001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "20.198,188",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 320,
+    "comments": "*ongoing update of the cadastral records due to JMD amendment"
+  },
+  {
+    "plot": "Α-U1_11",
+    "BLOCK": "A-U1_11",
+    "KAEK": "050501614001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "7.469,257",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 290,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_12",
+    "BLOCK": "A-U1_12",
+    "KAEK": "050501615001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "7.366,492",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 219,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX1",
+    "BLOCK": "A-U1_ΚX1",
+    "KAEK": "050501654001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "543,988",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 533,
+    "comments": "-"
+  },
+
+  {
+    "plot": "Α-U1_ΚX2",
+    "BLOCK": "A-U1_ΚX2",
+    "KAEK": "050501627001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.290,618",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 436,
+    "comments": "-"
+  },
+
+  {
+    "plot": "Α-U1_ΚX3",
+    "BLOCK": "A-U1_ΚX3",
+    "KAEK": "050501626001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.414,784",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 318,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX4",
+    "BLOCK": "A-U1_ΚX4",
+    "KAEK": "050501625001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.184,155",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 206,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX5",
+    "BLOCK": "A-U1_ΚX5",
+    "KAEK": "050501655001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "427,338",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 666,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX6",
+    "BLOCK": "A-U1_ΚX6",
+    "KAEK": "050501633001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.533,857",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 557,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX7",
+    "BLOCK": "A-U1_ΚX7",
+    "KAEK": "050501632001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.578,044",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 436,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX8",
+    "BLOCK": "A-U1_ΚX8",
+    "KAEK": "050501629001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.595,154",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 288,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚΧ9",
+    "BLOCK": "A-U1_ΚΧ9",
+    "KAEK": "050501637001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "488,534",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 714,
+    "comments": "-"
+  },
+
+  {
+    "plot": "Α-U1_ΚX10",
+    "BLOCK": "A-U1_ΚX10",
+    "KAEK": "050501636001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.342,386",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 604,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX11",
+    "BLOCK": "A-U1_ΚX11",
+    "KAEK": "050501635001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.488,061",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 479,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX12",
+    "BLOCK": "A-U1_ΚX12",
+    "KAEK": "050501634001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.825,961",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 315,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX13",
+    "BLOCK": "A-U1_ΚX13",
+    "KAEK": "050501624001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "983,918",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 241,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX14",
+    "BLOCK": "A-U1_ΚX14",
+    "KAEK": "050501628001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.601,108",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 313,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX15",
+    "BLOCK": "A-U1_ΚX15",
+    "KAEK": "050501630001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.558,253",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 422,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX16",
+    "BLOCK": "A-U1_ΚX16",
+    "KAEK": "050501641001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.472,020",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 469,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX17",
+    "BLOCK": "A-U1_ΚX17",
+    "KAEK": "050501638001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "565,181",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 500,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX18",
+    "BLOCK": "A-U1_ΚX18",
+    "KAEK": "050501639001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "856,705",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 406,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX19",
+    "BLOCK": "A-U1_ΚX19",
+    "KAEK": "050501656001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.249,157",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 362,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX20",
+    "BLOCK": "A-U1_ΚX20",
+    "KAEK": "050501631001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.577,263",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 448,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX21",
+    "BLOCK": "A-U1_ΚX21",
+    "KAEK": "050501640001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "21.676,457",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 201,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX22",
+    "BLOCK": "A-U1_ΚX22",
+    "KAEK": "050501623001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.273,116",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 208,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_ΚX23",
+    "BLOCK": "A-U1_ΚX23",
+    "KAEK": "050501622001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "891,694",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 178,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_KF1_1",
+    "BLOCK": "A-U1_KF1_1",
+    "KAEK": "050501642001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "4.163,968",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 264,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_KF1_2",
+    "BLOCK": "A-U1_KF1_2",
+    "KAEK": "050501643001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.790,376",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 302,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_KF2_KA",
+    "BLOCK": "A-U1_KF2_KA",
+    "KAEK": "050501653001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "3.925,187",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 183,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_KF3",
+    "BLOCK": "A-U1_KF3",
+    "KAEK": "050501644001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.895,053",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 337,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_KF4",
+    "BLOCK": "A-U1_KF4",
+    "KAEK": "050501645001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.603,768",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 271,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_KF5",
+    "BLOCK": "A-U1_KF5",
+    "KAEK": "050501648001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "4.004,961",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 457,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_KF6_1",
+    "BLOCK": "A-U1_KF6_1",
+    "KAEK": "050501646001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.661,001",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 348,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U1_KF6_2",
+    "BLOCK": "A-U1_KF6_2",
+    "KAEK": "050501647001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "7.095,025",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 351,
+    "comments": "-"
+  },
+
+  {
+    "plot": "Α-U2_1",
+    "BLOCK": "A-U2_1",
+    "KAEK": "050501717001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "15.485,634",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 205,
+    "comments": "-"
+  },
+
+  {
+    "plot": "Α-U2_2",
+    "BLOCK": "A-U2_2",
+    "KAEK": "050501716001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "31.656,984",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 326,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_3",
+    "BLOCK": "A-U2_3",
+    "KAEK": "050501715001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "15.993,907",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 559,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_4",
+    "BLOCK": "A-U2_4",
+    "KAEK": "050501714001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "15.715,087",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 567,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_5",
+    "BLOCK": "A-U2_5",
+    "KAEK": "050501713001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "21.861,361",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 565,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_6",
+    "BLOCK": "A-U2_6",
+    "KAEK": "050501712001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "20.120,596",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 569,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_7",
+    "BLOCK": "A-U2_7",
+    "KAEK": "050501709001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "19.604,245",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 613,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_8",
+    "BLOCK": "A-U2_8",
+    "KAEK": "050501708001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "21.035,240",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 642,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_9",
+    "BLOCK": "A-U2_9",
+    "KAEK": "050501706001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "13.080,833",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 653,
+    "comments": "-"
+  },
+
+  {
+    "plot": "Α-U2_10",
+    "BLOCK": "A-U2_10",
+    "KAEK": "050501705001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "15.389,792",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 653,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_11",
+    "BLOCK": "A-U2_11",
+    "KAEK": "050501702001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "17.239,257",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 813,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_12",
+    "BLOCK": "A-U2_12",
+    "KAEK": "050501703001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "12.446,593",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1051,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_13",
+    "BLOCK": "A-U2_13",
+    "KAEK": "050501718001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "16.403,722",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 193,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_14",
+    "BLOCK": "A-U2_14",
+    "KAEK": "050501719001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "9.770,868",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 326,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_15",
+    "BLOCK": "A-U2_15",
+    "KAEK": "050501711001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "4.630,070",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 502,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_16",
+    "BLOCK": "A-U2_16",
+    "KAEK": "050501710001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "4.516,795",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 563,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_17",
+    "BLOCK": "A-U2_17",
+    "KAEK": "050501707001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "13.248,731",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 449,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_18",
+    "BLOCK": "A-U2_18",
+    "KAEK": "050501704001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "7.648,208",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 479,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX1",
+    "BLOCK": "A-U2_ΚX1",
+    "KAEK": "050501720001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.085,333",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 299,
+    "comments": "-"
+  },
+
+  {
+    "plot": "Α-U2_ΚX2",
+    "BLOCK": "A-U2_ΚX2",
+    "KAEK": "050501726001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "390,568",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 670,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX3",
+    "BLOCK": "A-U2_ΚX3",
+    "KAEK": "050501725001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.280,905",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 564,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX4",
+    "BLOCK": "A-U2_ΚX4",
+    "KAEK": "050501724001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "786,182",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 493,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX5",
+    "BLOCK": "A-U2_ΚX5",
+    "KAEK": "050501723001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.014,891",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 328,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX7",
+    "BLOCK": "A-U2_ΚX7",
+    "KAEK": "050501731001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "866,502",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 736,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX8",
+    "BLOCK": "A-U2_ΚX8",
+    "KAEK": "050501730001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.877,717",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 594,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX9",
+    "BLOCK": "A-U2_ΚX9",
+    "KAEK": "050501729001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.190,098",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 521,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX10",
+    "BLOCK": "A-U2_ΚX10",
+    "KAEK": "050501736001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "395,398",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 755,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX11",
+    "BLOCK": "A-U2_ΚX11",
+    "KAEK": "050501735001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.271,607",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 649,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX12",
+    "BLOCK": "A-U2_ΚX12",
+    "KAEK": "050501734001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "805,830",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 578,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX13",
+    "BLOCK": "A-U2_ΚX13",
+    "KAEK": "050501733001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "978,137",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 495,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX14",
+    "BLOCK": "A-U2_ΚX14",
+    "KAEK": "050501732001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "451,181",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 472,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX16_1",
+    "BLOCK": "A-U2_ΚX16_1",
+    "KAEK": "050501737001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "7.470,005",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 694,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX16_2",
+    "BLOCK": "A-U2_ΚX16_2",
+    "KAEK": "050501738001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.386,111",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 763,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX17",
+    "BLOCK": "A-U2_ΚX17",
+    "KAEK": "050501727001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "278,729",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 478,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX18",
+    "BLOCK": "A-U2_ΚX18",
+    "KAEK": "050501728001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.215,343",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 467,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_ΚX19",
+    "BLOCK": "A-U2_ΚX19",
+    "KAEK": "050501721001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.031,033",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 400,
+    "comments": "*ongoing update of the cadastral records due to JMD amendment"
+  },
+  {
+    "plot": "Α-U2_KF1",
+    "BLOCK": "A-U2_KF1",
+    "KAEK": "050501740001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "8.929,888",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 400,
+    "comments": "*ongoing update of the cadastral records due to JMD amendment"
+  },
+
+  {
+    "plot": "Α-U2_KF2",
+    "BLOCK": "A-U2_KF2",
+    "KAEK": "050501741001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "3.244,041",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 492,
+    "comments": "*ongoing update of the cadastral records due to JMD amendment"
+  },
+  {
+    "plot": "Α-U2_KF2",
+    "BLOCK": "A-U2_KF2",
+    "KAEK": "050501742001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "3.450,578",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 495,
+    "comments": "*ongoing update of the cadastral records due to JMD amendment"
+  },
+  {
+    "plot": "Α-U2_KF3",
+    "BLOCK": "A-U2_KF3",
+    "KAEK": "050501743001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.800,190",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 500,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_KF4_1",
+    "BLOCK": "A-U2_KF4_1",
+    "KAEK": "050501744001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "4.365,005",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 498,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_KF4_2",
+    "BLOCK": "A-U2_KF4_2",
+    "KAEK": "050501745001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.574,347",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 499,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_KF5_1",
+    "BLOCK": "A-U2_KF5_1",
+    "KAEK": "050501746001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.410,260",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 577,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_KF5_2",
+    "BLOCK": "A-U2_KF5_2",
+    "KAEK": "050501747001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.385,007",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 584,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_KF6_KA",
+    "BLOCK": "A-U2_KF6_KA",
+    "KAEK": "050501754001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "9.155,263",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 498,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_KF7",
+    "BLOCK": "A-U2_KF7",
+    "KAEK": "050501748001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.996,247",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 585,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_KF8",
+    "BLOCK": "A-U2_KF8",
+    "KAEK": "050501749001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "8.011,965",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 586,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_KF9",
+    "BLOCK": "A-U2_KF9",
+    "KAEK": "050501750001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.399,499",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 502,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_KF10",
+    "BLOCK": "A-U2_KF10",
+    "KAEK": "050501751001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "4.132,411",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 940,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_KF11_1",
+    "BLOCK": "A-U2_KF11_1",
+    "KAEK": "050501752002",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.340,002",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1062,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_KF11_2",
+    "BLOCK": "A-U2_KF11_2",
+    "KAEK": "050501752001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.991,258",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1053,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_KF12",
+    "BLOCK": "A-U2_KF12",
+    "KAEK": "050501722001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.281,157",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 189,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U2_KF13",
+    "BLOCK": "A-U2_KF13",
+    "KAEK": "050501739001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.951,615",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 516,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_1",
+    "BLOCK": "A-U3_1",
+    "KAEK": "050501526001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "25.929,178",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1378,
+    "comments": "-"
+  },
+
+  {
+    "plot": "Α-U3_2",
+    "BLOCK": "A-U3_2",
+    "KAEK": "050501527001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "9.776,321",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "7207 - 24/7/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1350,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_3",
+    "BLOCK": "A-U3_3",
+    "KAEK": "050501529001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "11.272,396",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1281,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_4",
+    "BLOCK": "A-U3_4",
+    "KAEK": "050501530001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "25.027,743",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1247,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_5",
+    "BLOCK": "A-U3_5",
+    "KAEK": "050501534001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "11.583,834",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1272,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_6",
+    "BLOCK": "A-U3_6",
+    "KAEK": "050501531001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "4.870,170",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1374,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_7",
+    "BLOCK": "A-U3_7",
+    "KAEK": "050501535001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "6.187,285",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1394,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_8",
+    "BLOCK": "A-U3_8",
+    "KAEK": "050501533001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "18.698,434",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1459,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_9",
+    "BLOCK": "A-U3_9",
+    "KAEK": "050501532001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.927,685",
+    "LAND_AGREEMENT": "7193 - 16/7/2024",
+    "NOTARY": "ΕΛΕΝΗ ΘΩΜΟΠΟΥΛΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "7192 - 16/7/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1461,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_10",
+    "BLOCK": "A-U3_10",
+    "KAEK": "050501536001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "12.503,067",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "7192 - 16/7/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1471,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_11",
+    "BLOCK": "A-U3_11",
+    "KAEK": "050501538001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "15.065,028",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "7192 - 16/7/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1511,
+    "comments": "*ongoing update of the cadastral records due to JMD amendment"
+  },
+  {
+    "plot": "Α-U3_12",
+    "BLOCK": "A-U3_12",
+    "KAEK": "050501537001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "9.796,665",
+    "LAND_AGREEMENT": "7210 - 25/7/2024",
+    "NOTARY": "ΕΛΕΝΗ ΘΩΜΟΠΟΥΛΟΥ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "7192 - 16/7/2024",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1571,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_ΚX1",
+    "BLOCK": "A-U3_ΚX1",
+    "KAEK": "050501545001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.532,565",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1551,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_ΚX2",
+    "BLOCK": "A-U3_ΚX2",
+    "KAEK": "050501544001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.008,386",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1465,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_ΚX3",
+    "BLOCK": "A-U3_ΚX3",
+    "KAEK": "050501543001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "866,808",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1381,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_ΚX4",
+    "BLOCK": "A-U3_ΚX4",
+    "KAEK": "050501542001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.055,196",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1288,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_ΚX5",
+    "BLOCK": "A-U3_ΚX5",
+    "KAEK": "050501541001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "466,413",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1263,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_ΚX6",
+    "BLOCK": "A-U3_ΚX6",
+    "KAEK": "050501546001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.851,193",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1500,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_ΚX7",
+    "BLOCK": "A-U3_ΚX7",
+    "KAEK": "050501540001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.239,132",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1636,
+    "comments": "*ongoing update of the cadastral records due to JMD amendment"
+  },
+  {
+    "plot": "Α-U3_ΚX8",
+    "BLOCK": "A-U3_ΚX8",
+    "KAEK": "050501539001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "20.490,477",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1350,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_KF1_KA",
+    "BLOCK": "A-U3_KF1_KA",
+    "KAEK": "050501589001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "9.578,584",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1545,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_KF2_1-KA",
+    "BLOCK": "A-U3_KF2_1-KA",
+    "KAEK": "050501590001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "6.426,049",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1557,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_KF2_2-KA",
+    "BLOCK": "A-U3_KF2_2-KA",
+    "KAEK": "050501570001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.692,846",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1587,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_KF3",
+    "BLOCK": "A-U3_KF3",
+    "KAEK": "050501569001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.922,463",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1387,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_KF4_1",
+    "BLOCK": "A-U3_KF4_1",
+    "KAEK": "050501572001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "3.720,366",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1370,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_KF4_2",
+    "BLOCK": "A-U3_KF4_2",
+    "KAEK": "050501571001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.570,205",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1368,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U3_KF5",
+    "BLOCK": "A-U3_KF5",
+    "KAEK": "050501568001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "3.594,228",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1346,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_1",
+    "BLOCK": "A-U4_1",
+    "KAEK": "050501523001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "12.420,682",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2219,
+    "comments": "-"
+  },
+
+  {
+    "plot": "Α-U4_2",
+    "BLOCK": "A-U4_2",
+    "KAEK": "050501507001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "11.131,238",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050501507002",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2242,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_3",
+    "BLOCK": "A-U4_3",
+    "KAEK": "050501524001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "28.060,270",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2144,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_4",
+    "BLOCK": "A-U4_4",
+    "KAEK": "050501519001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "12.271,447",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2085,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_5",
+    "BLOCK": "A-U4_5",
+    "KAEK": "050501591001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "10.983,005",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2110,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_6",
+    "BLOCK": "A-U4_6",
+    "KAEK": "050501504001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "11.110,122",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050501504002",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2084,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_7",
+    "BLOCK": "A-U4_7",
+    "KAEK": "050501503001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "16.870,463",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050501503002",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2013,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_8",
+    "BLOCK": "A-U4_8",
+    "KAEK": "050501518001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "11.252,745",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1972,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_9",
+    "BLOCK": "A-U4_9",
+    "KAEK": "050501506001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "10.910,860",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050501506002",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1988,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_10",
+    "BLOCK": "A-U4_10",
+    "KAEK": "050501505001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "11.106,468",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050501505002",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1971,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_11",
+    "BLOCK": "A-U4_11",
+    "KAEK": "050501502001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "16.869,092",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050501502002",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1899,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_12",
+    "BLOCK": "A-U4_12",
+    "KAEK": "050501520001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "16.261,851",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1960,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_13",
+    "BLOCK": "A-U4_13",
+    "KAEK": "050501522001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "3.614,597",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2031,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_14",
+    "BLOCK": "A-U4_14",
+    "KAEK": "050501521001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "3.872,673",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1932,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_15",
+    "BLOCK": "A-U4_15",
+    "KAEK": "050501516001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "25.471,163",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1677,
+    "comments": "*MoU has being signed with CGS / ongoing update of the cadastral records due to JMD amendment"
+  },
+  {
+    "plot": "Α-U4_16",
+    "BLOCK": "A-U4_16",
+    "KAEK": "050501517001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "6.291,229",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1850,
+    "comments": "*MoU has being signed with CGS / ongoing update of the cadastral records due to JMD amendment"
+  },
+  {
+    "plot": "Α-U4_18",
+    "BLOCK": "A-U4_18",
+    "KAEK": "050501597001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "26.954,560",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050501597002",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1464,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_ΚX1",
+    "BLOCK": "A-U4_ΚX1",
+    "KAEK": "050501560001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "11.827,294",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2253,
+    "comments": "-"
+  },
+
+  {
+    "plot": "Α-U4_ΚX2",
+    "BLOCK": "A-U4_ΚX2",
+    "KAEK": "050501561001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "13.210,904",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2129,
+    "comments": "*ongoing update of the cadastral records due to JMD amendment"
+  },
+  {
+    "plot": "Α-U4_ΚX3",
+    "BLOCK": "A-U4_ΚX3",
+    "KAEK": "050501562001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.141,378",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2030,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_ΚX4",
+    "BLOCK": "A-U4_ΚX4",
+    "KAEK": "050501563001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "912,656",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1910,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_ΚX5",
+    "BLOCK": "A-U4_ΚX5",
+    "KAEK": "050501564001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "3.666,937",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1855,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_ΚX6",
+    "BLOCK": "A-U4_ΚX6",
+    "KAEK": "050501565001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "675,047",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1854,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_ΚX7",
+    "BLOCK": "A-U4_ΚX7",
+    "KAEK": "050501566001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "746,072",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1787,
+    "comments": "-"
+  },
+
+
+  {
+    "plot": "Α-U4_ΚX8",
+    "BLOCK": "A-U4_ΚX8",
+    "KAEK": "050501567001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.353,500",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1560,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_ΚX9",
+    "BLOCK": "A-U4_ΚX9",
+    "KAEK": "050501559001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.710,505",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2332,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_ΚX10",
+    "BLOCK": "A-U4_ΚX10",
+    "KAEK": "050501558001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "10.451,479",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2264,
+    "comments": "-"
+  },
+ {
+    "plot": "Α-U4_ΚΧ11",
+    "BLOCK": "A-U4_ΚΧ11",
+    "KAEK": "050501555001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "13.836,620",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2099,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_ΚX12",
+    "BLOCK": "A-U4_ΚX12",
+    "KAEK": "050501554001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "8.696,820",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1964,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_ΚX13",
+    "BLOCK": "A-U4_ΚX13",
+    "KAEK": "050501553001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "4.015,780",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1875,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_ΚX14",
+    "BLOCK": "A-U4_ΚX14",
+    "KAEK": "050501550001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.528,611",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1501,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_ΚX15",
+    "BLOCK": "A-U4_ΚX15",
+    "KAEK": "050501549001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.155,669",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1454,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_ΚX16",
+    "BLOCK": "A-U4_ΚX16",
+    "KAEK": "050501548001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "22.808,993",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2069,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_ΚX17",
+    "BLOCK": "A-U4_ΚX17",
+    "KAEK": "050501547001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.201,669",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1661,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_ΚΧ18",
+    "BLOCK": "A-U4_ΚΧ18",
+    "KAEK": "050501594001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "275,300",
+    "LAND_AGREEMENT": "1324 - 9/5/2022",
+    "NOTARY": "ΘΕΜΙΣΤΟΚΛΗΣ ΚΑΡΙΝΙΩΤΑΚΗΣ",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2213,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_KF1_1_KA",
+    "BLOCK": "A-U4_KF1_1_KA",
+    "KAEK": "050501588001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "7.410,004",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2230,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_KF1_2",
+    "BLOCK": "A-U4_KF1_2",
+    "KAEK": "050501584001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "7.654,448",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2268,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_KF2",
+    "BLOCK": "A-U4_KF2",
+    "KAEK": "050501581001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.160,024",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2205,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_KF3",
+    "BLOCK": "A-U4_KF3",
+    "KAEK": "050501583001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.278,872",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2209,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_KF4",
+    "BLOCK": "A-U4_KF4",
+    "KAEK": "050501580001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "4.895,218",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1868,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_KF5",
+    "BLOCK": "A-U4_KF5",
+    "KAEK": "050501578001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "56.696,696",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1570,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_KF6",
+    "BLOCK": "A-U4_KF6",
+    "KAEK": "050501579001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "4.242,154",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1547,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_KF7",
+    "BLOCK": "A-U4_KF7",
+    "KAEK": "050501577001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "3.032,106",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1699,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_KF8",
+    "BLOCK": "A-U4_KF8",
+    "KAEK": "050501576001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.912,362",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1772,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U4_KF9",
+    "BLOCK": "A-U4_KF9",
+    "KAEK": "050501582001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.999,994",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 2245,
+    "comments": "-"
+  },
+ 
+
+  {
+    "plot": "Α-U5_1",
+    "BLOCK": "A-U5_1",
+    "KAEK": "050501508001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "15.934,818",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1165,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_2",
+    "BLOCK": "A-U5_2",
+    "KAEK": "050501509001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "13.250,639",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1210,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_3",
+    "BLOCK": "A-U5_3",
+    "KAEK": "050501512001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "17.918,725",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1357,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_4A",
+    "BLOCK": "A-U5_4A",
+    "KAEK": "050501514001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "24.582,642",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1496,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_4Β",
+    "BLOCK": "A-U5_4Β",
+    "KAEK": "050501592001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "15.540,540",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1509,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_5",
+    "BLOCK": "A-U5_5",
+    "KAEK": "050501525001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "19.262,709",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1717,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_6",
+    "BLOCK": "A-U5_6",
+    "KAEK": "050501515001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "30.440,859",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1595,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_7",
+    "BLOCK": "A-U5_7",
+    "KAEK": "050501510001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "8.953,391",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1280,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_8",
+    "BLOCK": "A-U5_8",
+    "KAEK": "050501511001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "15.199,073",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1377,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_9",
+    "BLOCK": "A-U5_9",
+    "KAEK": "050501513001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "19.370,617",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1451,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_ΚX1",
+    "BLOCK": "A-U5_ΚX1",
+    "KAEK": "050501557001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "21.555,786",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1747,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_ΚX2",
+    "BLOCK": "A-U5_ΚX2",
+    "KAEK": "050501556001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.119,839",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1866,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_ΚX3",
+    "BLOCK": "A-U5_ΚX3",
+    "KAEK": "050501552001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "6.645,377",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1804,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_ΚX4",
+    "BLOCK": "A-U5_ΚX4",
+    "KAEK": "050501551001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "18.588,397",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1597,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_ΚΧ5.1",
+    "BLOCK": "A-U5_ΚΧ5.1",
+    "KAEK": "050501595001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.542,518",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1454,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_ΚX5_2",
+    "BLOCK": "A-U5_ΚX5_2",
+    "KAEK": "050501596001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.290,572",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1175,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_KF1",
+    "BLOCK": "A-U5_KF1",
+    "KAEK": "050501573001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "17.102,097",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1632,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_KF2_1",
+    "BLOCK": "A-U5_KF2_1",
+    "KAEK": "050501587001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "4.717,219",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1899,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_KF2_2",
+    "BLOCK": "A-U5_KF2_2",
+    "KAEK": "050501575001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.057,032",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1845,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_KF3_1",
+    "BLOCK": "A-U5_KF3_1",
+    "KAEK": "050501574001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "8.490,036",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1840,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_KF3_2",
+    "BLOCK": "A-U5_KF3_2",
+    "KAEK": "050501593001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.960,911",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1915,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_KF4",
+    "BLOCK": "A-U5_KF4",
+    "KAEK": "050501586001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.647,563",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1362,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U5_KF5",
+    "BLOCK": "A-U5_KF5",
+    "KAEK": "050501585001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "6.936,614",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 1285,
+    "comments": "-"
+  },
+
+  {
+    "plot": "Α-U6_1",
+    "BLOCK": "A-U6_1",
+    "KAEK": "050501606001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "22.224,633",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 737,
+    "comments": "-"
+  },
+
+  {
+    "plot": "Α-U6_2",
+    "BLOCK": "A-U6_2",
+    "KAEK": "050501602001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "12.338,028",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 558,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_3",
+    "BLOCK": "A-U6_3",
+    "KAEK": "050501601001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "9.751,933",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 355,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_4",
+    "BLOCK": "A-U6_4",
+    "KAEK": "050501605001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.802,490",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 788,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_5",
+    "BLOCK": "A-U6_5",
+    "KAEK": "050501604001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "7.338,045",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 680,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_6",
+    "BLOCK": "A-U6_6",
+    "KAEK": "050501603001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "10.158,326",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 521,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_7",
+    "BLOCK": "A-U6_7",
+    "KAEK": "050132743001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "14.760,702",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 428,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_8",
+    "BLOCK": "A-U6_8",
+    "KAEK": "050132742001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "17.826,049",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 300,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_9",
+    "BLOCK": "A-U6_9",
+    "KAEK": "050132741001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.094,594",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 414,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_10",
+    "BLOCK": "A-U6_10",
+    "KAEK": "050132740001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "6.190,667",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4802 - 27/5/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 300,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_11",
+    "BLOCK": "A-U6_11",
+    "KAEK": "050132739001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "145/2",
+    "AREA": "19.509,937",
+    "LAND_AGREEMENT": "",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 192,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_ΚX1",
+    "BLOCK": "A-U6_ΚX1",
+    "KAEK": "050132748001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.082,818",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 352,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_ΚX2",
+    "BLOCK": "A-U6_ΚX2",
+    "KAEK": "050132744001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "3.529,338",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 245,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_ΚX3",
+    "BLOCK": "A-U6_ΚX3",
+    "KAEK": "050501619001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "6.100,069",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 579,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_ΚX4",
+    "BLOCK": "A-U6_ΚX4",
+    "KAEK": "050132745001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "11.574,190",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 371,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_ΚX5",
+    "BLOCK": "A-U6_ΚX5",
+    "KAEK": "050501620001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.247,947",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 446,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_ΚX6",
+    "BLOCK": "A-U6_ΚX6",
+    "KAEK": "050501621001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "4.574,498",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 486,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_KF1_1",
+    "BLOCK": "A-U6_KF1_1",
+    "KAEK": "050501650001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "7.171,968",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 629,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_KF1_2",
+    "BLOCK": "A-U6_KF1_2",
+    "KAEK": "050501649001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.970,699",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 725,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_KF2",
+    "BLOCK": "A-U6_KF2",
+    "KAEK": "050501651001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.651,959",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 497,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_KF3",
+    "BLOCK": "A-U6_KF3",
+    "KAEK": "050501652001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.094,227",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 408,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_KF4",
+    "BLOCK": "A-U6_KF4",
+    "KAEK": "050132747001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.072,907",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 469,
+    "comments": "-"
+  },
+  {
+    "plot": "Α-U6_KF5",
+    "BLOCK": "A-U6_KF5",
+    "KAEK": "050132746001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "4.102,021",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 519,
+    "comments": "-"
+  },
+
+
+  {
+    "plot": "CF-U1_ΚX1",
+    "BLOCK": "CF-U1_ΚX1",
+    "KAEK": "050134704001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.440,613",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 33,
+    "comments": "-"
+  },
+
+  {
+    "plot": "CF-U1_ΚX2",
+    "BLOCK": "CF-U1_ΚX2",
+    "KAEK": "050134705001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.648,629",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 16,
+    "comments": "-"
+  },
+  {
+    "plot": "CF-U1_ΚX3",
+    "BLOCK": "CF-U1_ΚX3",
+    "KAEK": "050134707001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.201,077",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 22,
+    "comments": "-"
+  },
+  {
+    "plot": "CF-U1_ΚX4",
+    "BLOCK": "CF-U1_ΚX4",
+    "KAEK": "050134711001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "392,094",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 20,
+    "comments": "-"
+  },
+  {
+    "plot": "CF-U1_ΚX5",
+    "BLOCK": "CF-U1_ΚX5",
+    "KAEK": "050134713001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "6.943,798",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 92,
+    "comments": "-"
+  },
+  {
+    "plot": "CF-U1_ΚX6",
+    "BLOCK": "CF-U1_ΚX6",
+    "KAEK": "050500115001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "326,230",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 92,
+    "comments": "*ongoing update of the cadastral records due to JMD amendment"
+  },
+  {
+    "plot": "CF-U1_ΚX7",
+    "BLOCK": "CF-U1_ΚX7",
+    "KAEK": "050134710003",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "5.715,450",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 14,
+    "comments": "-"
+  },
+  {
+    "plot": "CF-U1_ΚX8",
+    "BLOCK": "CF-U1_ΚX8",
+    "KAEK": "050500520001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "41.660,180",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 18,
+    "comments": "*ongoing update of the cadastral records due to JMD amendment"
+  },
+  {
+    "plot": "CF-U1_ΚX9",
+    "BLOCK": "CF-U1_ΚX9",
+    "KAEK": "050500522001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "2.850,140",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 134,
+    "comments": "-"
+  },
+  {
+    "plot": "CF-U1_ΚX10",
+    "BLOCK": "CF-U1_ΚX10",
+    "KAEK": "050500112001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "1.796,591",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 17,
+    "comments": "-"
+  },
+  {
+    "plot": "CF-U1_ΚX11",
+    "BLOCK": "CF-U1_ΚX11",
+    "KAEK": "050134714003",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "-",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 21,
+    "comments": "-"
+  },
+  {
+    "plot": "CF-U1_KF1",
+    "BLOCK": "CF-U1_KF1",
+    "KAEK": "050500523001",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "13.081,103",
+    "LAND_AGREEMENT": "143125 ΕΞ 2022 - 4/10/2022",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "-",
+    "SURFACE_RIGHT_KAEK": "-",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 23,
+    "comments": "-"
+  },
+  {
+    "plot": "CF-D1 - OPEN SPACE",
+    "BLOCK": "CF-D1",
+    "KAEK": "050500102020",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "23.444,170",
+    "LAND_AGREEMENT": "36620 - 19/6/2023",
+    "NOTARY": "ΕΜΜΑΝΟΥΗΛ ΣΑΡΑΓΙΩΤΗΣ",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050500102017",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 75,
+    "comments": "-"
+  },
+  {
+    "plot": "CF-D2 - OPEN SPACE SOUTH OF BELT",
+    "BLOCK": "CF-D2",
+    "KAEK": "050500113004",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "32.876,550",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050500113006",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 19,
+    "comments": "-"
+  },
+  {
+    "plot": "CF-D2 - OPEN SPACE NORTH OF BELT",
+    "BLOCK": "CF-D2",
+    "KAEK": "050500113003",
+    "HORIZONTAL_VERTICAL_ownership_NUMBER": "-",
+    "AREA": "10.076,860",
+    "LAND_AGREEMENT": "ΝΟΜΟΣ 4787 - 26/3/2021",
+    "NOTARY": "",
+    "SURFACE_RIGHT": "YES",
+    "SURFACE_RIGHT_KAEK": "050500113005",
+    "EASEMENT_AGREEMENT": "-",
+    "RIGHT_OF_WAY_AGREEMENT": "-",
+    "DISTANCE_FROM_SEA": 27,
+    "comments": "-"
+  }
+
+
+            ];
+            const plotSelect2 = document.getElementById('plotSelect2');
+            const resultsDiv2 = document.getElementById('results2');
+
+            const uniquePlots2 = [...new Set(data2.map(item => item.plot))];
+            uniquePlots2.forEach(plot => {
+                const option = document.createElement('option');
+                option.value = plot;
+                option.textContent = plot;
+                plotSelect2.appendChild(option);
+            });
+
+            plotSelect2.addEventListener('change', function() {
+                const selectedPlot = plotSelect2.value;
+                const filteredData2 = data2.filter(item => item.plot === selectedPlot);
+                let resultHTML2 = `<h2>Results for ${selectedPlot}</h2>`;
+                if (filteredData2.length > 0) {
+                    const firstEntry = filteredData2[0];
+                    resultHTML2 += `<p>Block: ${firstEntry.BLOCK}</p>`;
+                    resultHTML2 += `<p><h3>KAEK: ${firstEntry.KAEK}</h3></p>`;
+        resultHTML2 += `<p>SURFACE RIGHT KAEK: <b>${firstEntry.SURFACE_RIGHT_KAEK}</b><p>`;
+
+
+        resultHTML2 += `<p>COMMENTS: <b>${firstEntry.comments}</b><p>`;
+                    // Additional fields here...
+                } else {
+                    resultHTML2 += `<p>No data available for this plot.</p>`;
+                }
+                resultsDiv2.innerHTML = resultHTML2;
+            });
+        </script>
+    </div>
+
+    <!-- JavaScript for Password Protection and Content Toggle -->
+    <script>
+        function generateDailyPassword() {
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+            const day = String(today.getDate()).padStart(2, '0');
+            return `${year}${month}${day}`; // e.g., 20241106 for November 6, 2024
+        }
+
+        function checkPassword() {
+            const enteredPassword = document.getElementById("passwordInput").value;
+            const correctPassword = generateDailyPassword(); // Get today's password
+            if (enteredPassword === correctPassword) {
+                document.getElementById("passwordPrompt").style.display = "none";
+                document.getElementById("mainContent").style.display = "block";
+            } else {
+                document.getElementById("errorMessage").style.display = "block";
+            }
+        }
+
+        function showSection(sectionId) {
+            document.getElementById("kanonismoiContent").style.display = "none";
+            document.getElementById("dilosiContent").style.display = "none";
+            document.getElementById("kaekContent").style.display = "none";
+            document.getElementById(sectionId).style.display = "block";
+        }
+    </script>
+
+</body>
+<!-- Centered Text at the Bottom -->
+<p align="center"><small>Upp Dept. v.1 20241105</small></p>
+</html>
